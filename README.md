@@ -71,61 +71,63 @@ Implementar um compilador que inclui:
 ## Estruturas da Linguagem
 
 ### Declaração de Variáveis
-
+```
 inteirivis idade;
-realzivis preco;
-textivis nome;
-
+realzivis preco; textivis nome;
+```
 ### Atribuição de VALOR
-
+```
 idade = 25;
 preco = 12.5;
 nome = "João";
-
+```
 ### Procedimentos
-
+```
 procedimentivis saudacao(textivis nome) {
-    // Não retorna valor
-    // necessário `retornivis;` mesmo retornando vazio
     retornivis;
 }
+```
+Não retorna valor. É necessário `retornivis;` mesmo retornando vazio
 
 ### Funções
-
+```
 funcaozivis somar(inteirivis a, inteirivis b) retornivis inteirivis {
     retornivis a + b;
 }
-
-// Importante: Sempre use `retornivis <tipo>` após os parênteses da função para indicar o tipo de retorno.
+```
+Importante: Sempre use `retornivis <tipo>` após os parênteses da função para indicar o tipo de retorno.
 
 ### Estrutura de repetição
-
+```
 inteirivis i;
 i = 0;
 
 enquantivis (i < 5) {
     i = i + 1;
 }
-
+```
 
 ### Estrutura condicional
-
+```
 sevis (x > 10) {
     // bloco verdadeiro
 } senivis {
     // bloco falso
 }
-
+```
 
 ### Comentários
+```
 // etc etc etc bla bla bla
-
+```
+### IMPORTANTE
+Ao fim de todo código é necessário colocar `finivis` na última linha
 
 ### Como utilizar
 1- Instale o ply
-
-- pip install ply
-
+```
+pip install ply
+```
 2- Crie um arquivo (nome_do_arquivo.bai) na pasta 'exemplos'
 
 3- Abra o terminal na raiz do projeto
