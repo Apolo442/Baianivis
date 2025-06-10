@@ -1,0 +1,14 @@
+inteirivis contador;
+
+funcaozivis dobrar(inteirivis x) retornivis inteirivis {
+    retornivis x * 2;
+}
+
+procedimentivis principal() {
+    contador = 5;
+    contador = dobrar(contador);
+    retornivis;
+}
+
+principal();
+finivis

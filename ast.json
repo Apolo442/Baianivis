@@ -1,0 +1,512 @@
+{
+    "tipo_nodo": "programa",
+    "declaracoes": [
+        {
+            "tipo_nodo": "declaracao_variavel",
+            "nome": "contador_global",
+            "tipo_dado": "inteirivis"
+        },
+        {
+            "tipo_nodo": "declaracao_variavel",
+            "nome": "taxa_global",
+            "tipo_dado": "realzivis"
+        },
+        {
+            "tipo_nodo": "declaracao_variavel",
+            "nome": "mensagem_global",
+            "tipo_dado": "textivis"
+        },
+        {
+            "tipo_nodo": "declaracao_variavel",
+            "nome": "i",
+            "tipo_dado": "inteirivis"
+        },
+        {
+            "tipo_nodo": "declaracao_variavel",
+            "nome": "limite",
+            "tipo_dado": "inteirivis"
+        },
+        {
+            "tipo_nodo": "declaracao_variavel",
+            "nome": "valor_calculado",
+            "tipo_dado": "realzivis"
+        },
+        {
+            "tipo_nodo": "declaracao_variavel",
+            "nome": "status_loop",
+            "tipo_dado": "textivis"
+        },
+        {
+            "tipo_nodo": "declaracao_procedimento",
+            "nome": "atualiza_globais",
+            "parametros": [
+                {
+                    "nome": "incremento",
+                    "tipo_dado": "inteirivis"
+                },
+                {
+                    "nome": "nova_msg",
+                    "tipo_dado": "textivis"
+                }
+            ],
+            "bloco": [
+                {
+                    "tipo_nodo": "atribuicao",
+                    "id": "contador_global",
+                    "expressao": {
+                        "tipo_nodo": "binaria",
+                        "operador": "+",
+                        "esquerda": {
+                            "tipo_nodo": "variavel",
+                            "nome": "contador_global",
+                            "tipo_dado": "inteirivis"
+                        },
+                        "direita": {
+                            "tipo_nodo": "variavel",
+                            "nome": "incremento",
+                            "tipo_dado": "inteirivis"
+                        },
+                        "tipo_dado": "inteirivis"
+                    }
+                },
+                {
+                    "tipo_nodo": "atribuicao",
+                    "id": "taxa_global",
+                    "expressao": {
+                        "tipo_nodo": "binaria",
+                        "operador": "+",
+                        "esquerda": {
+                            "tipo_nodo": "variavel",
+                            "nome": "taxa_global",
+                            "tipo_dado": "realzivis"
+                        },
+                        "direita": {
+                            "tipo_nodo": "numero",
+                            "valor": 0.1,
+                            "tipo_dado": "realzivis"
+                        },
+                        "tipo_dado": "realzivis"
+                    }
+                },
+                {
+                    "tipo_nodo": "atribuicao",
+                    "id": "mensagem_global",
+                    "expressao": {
+                        "tipo_nodo": "binaria",
+                        "operador": "+",
+                        "esquerda": {
+                            "tipo_nodo": "binaria",
+                            "operador": "+",
+                            "esquerda": {
+                                "tipo_nodo": "variavel",
+                                "nome": "mensagem_global",
+                                "tipo_dado": "textivis"
+                            },
+                            "direita": {
+                                "tipo_nodo": "texto",
+                                "valor": " -> ",
+                                "tipo_dado": "textivis"
+                            },
+                            "tipo_dado": "textivis"
+                        },
+                        "direita": {
+                            "tipo_nodo": "variavel",
+                            "nome": "nova_msg",
+                            "tipo_dado": "textivis"
+                        },
+                        "tipo_dado": "textivis"
+                    }
+                },
+                {
+                    "tipo_nodo": "retorno_vazio"
+                }
+            ]
+        },
+        {
+            "tipo_nodo": "declaracao_funcao",
+            "nome": "calcula_valor",
+            "parametros": [
+                {
+                    "nome": "base",
+                    "tipo_dado": "inteirivis"
+                },
+                {
+                    "nome": "fator",
+                    "tipo_dado": "realzivis"
+                }
+            ],
+            "retorno": "realzivis",
+            "bloco": [
+                {
+                    "tipo_nodo": "declaracao_variavel",
+                    "nome": "resultado_local",
+                    "tipo_dado": "realzivis"
+                },
+                {
+                    "tipo_nodo": "atribuicao",
+                    "id": "resultado_local",
+                    "expressao": {
+                        "tipo_nodo": "binaria",
+                        "operador": "+",
+                        "esquerda": {
+                            "tipo_nodo": "binaria",
+                            "operador": "*",
+                            "esquerda": {
+                                "tipo_nodo": "variavel",
+                                "nome": "base",
+                                "tipo_dado": "inteirivis"
+                            },
+                            "direita": {
+                                "tipo_nodo": "variavel",
+                                "nome": "fator",
+                                "tipo_dado": "realzivis"
+                            },
+                            "tipo_dado": "realzivis"
+                        },
+                        "direita": {
+                            "tipo_nodo": "variavel",
+                            "nome": "taxa_global",
+                            "tipo_dado": "realzivis"
+                        },
+                        "tipo_dado": "realzivis"
+                    }
+                },
+                {
+                    "tipo_nodo": "condicional",
+                    "condicao": {
+                        "tipo_nodo": "binaria",
+                        "operador": ">",
+                        "esquerda": {
+                            "tipo_nodo": "variavel",
+                            "nome": "resultado_local",
+                            "tipo_dado": "realzivis"
+                        },
+                        "direita": {
+                            "tipo_nodo": "numero",
+                            "valor": 10.0,
+                            "tipo_dado": "realzivis"
+                        },
+                        "tipo_dado": "inteirivis"
+                    },
+                    "bloco_verdadeiro": {
+                        "tipo_nodo": "bloco",
+                        "comandos": [
+                            {
+                                "tipo_nodo": "atribuicao",
+                                "id": "resultado_local",
+                                "expressao": {
+                                    "tipo_nodo": "binaria",
+                                    "operador": "/",
+                                    "esquerda": {
+                                        "tipo_nodo": "variavel",
+                                        "nome": "resultado_local",
+                                        "tipo_dado": "realzivis"
+                                    },
+                                    "direita": {
+                                        "tipo_nodo": "numero",
+                                        "valor": 2.0,
+                                        "tipo_dado": "realzivis"
+                                    },
+                                    "tipo_dado": "realzivis"
+                                }
+                            }
+                        ]
+                    },
+                    "bloco_falso": {
+                        "tipo_nodo": "bloco",
+                        "comandos": [
+                            {
+                                "tipo_nodo": "atribuicao",
+                                "id": "resultado_local",
+                                "expressao": {
+                                    "tipo_nodo": "binaria",
+                                    "operador": "+",
+                                    "esquerda": {
+                                        "tipo_nodo": "variavel",
+                                        "nome": "resultado_local",
+                                        "tipo_dado": "realzivis"
+                                    },
+                                    "direita": {
+                                        "tipo_nodo": "numero",
+                                        "valor": 1.0,
+                                        "tipo_dado": "realzivis"
+                                    },
+                                    "tipo_dado": "realzivis"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "tipo_nodo": "retorno",
+                    "expressao": {
+                        "tipo_nodo": "variavel",
+                        "nome": "resultado_local",
+                        "tipo_dado": "realzivis"
+                    }
+                }
+            ]
+        }
+    ],
+    "comandos": [
+        {
+            "tipo_nodo": "atribuicao",
+            "id": "contador_global",
+            "expressao": {
+                "tipo_nodo": "numero",
+                "valor": 0,
+                "tipo_dado": "inteirivis"
+            }
+        },
+        {
+            "tipo_nodo": "atribuicao",
+            "id": "taxa_global",
+            "expressao": {
+                "tipo_nodo": "numero",
+                "valor": 0.5,
+                "tipo_dado": "realzivis"
+            }
+        },
+        {
+            "tipo_nodo": "atribuicao",
+            "id": "mensagem_global",
+            "expressao": {
+                "tipo_nodo": "texto",
+                "valor": "Início",
+                "tipo_dado": "textivis"
+            }
+        },
+        {
+            "tipo_nodo": "atribuicao",
+            "id": "limite",
+            "expressao": {
+                "tipo_nodo": "numero",
+                "valor": 5,
+                "tipo_dado": "inteirivis"
+            }
+        },
+        {
+            "tipo_nodo": "atribuicao",
+            "id": "i",
+            "expressao": {
+                "tipo_nodo": "numero",
+                "valor": 1,
+                "tipo_dado": "inteirivis"
+            }
+        },
+        {
+            "tipo_nodo": "atribuicao",
+            "id": "status_loop",
+            "expressao": {
+                "tipo_nodo": "texto",
+                "valor": "",
+                "tipo_dado": "textivis"
+            }
+        },
+        {
+            "tipo_nodo": "chamada_procedimento",
+            "nome": "atualiza_globais",
+            "argumentos": [
+                {
+                    "tipo_nodo": "numero",
+                    "valor": 1,
+                    "tipo_dado": "inteirivis"
+                },
+                {
+                    "tipo_nodo": "texto",
+                    "valor": "Procedimento chamado",
+                    "tipo_dado": "textivis"
+                }
+            ]
+        },
+        {
+            "tipo_nodo": "repeticao",
+            "condicao": {
+                "tipo_nodo": "binaria",
+                "operador": "<=",
+                "esquerda": {
+                    "tipo_nodo": "variavel",
+                    "nome": "i",
+                    "tipo_dado": "inteirivis"
+                },
+                "direita": {
+                    "tipo_nodo": "variavel",
+                    "nome": "limite",
+                    "tipo_dado": "inteirivis"
+                },
+                "tipo_dado": "inteirivis"
+            },
+            "bloco": {
+                "tipo_nodo": "bloco",
+                "comandos": [
+                    {
+                        "tipo_nodo": "atribuicao",
+                        "id": "valor_calculado",
+                        "expressao": {
+                            "tipo_nodo": "chamada_funcao",
+                            "nome": "calcula_valor",
+                            "argumentos": [
+                                {
+                                    "tipo_nodo": "variavel",
+                                    "nome": "i",
+                                    "tipo_dado": "inteirivis"
+                                },
+                                {
+                                    "tipo_nodo": "numero",
+                                    "valor": 1.5,
+                                    "tipo_dado": "realzivis"
+                                }
+                            ],
+                            "tipo_dado": "realzivis"
+                        }
+                    },
+                    {
+                        "tipo_nodo": "atribuicao",
+                        "id": "status_loop",
+                        "expressao": {
+                            "tipo_nodo": "binaria",
+                            "operador": "+",
+                            "esquerda": {
+                                "tipo_nodo": "variavel",
+                                "nome": "status_loop",
+                                "tipo_dado": "textivis"
+                            },
+                            "direita": {
+                                "tipo_nodo": "texto",
+                                "valor": "Iteração; ",
+                                "tipo_dado": "textivis"
+                            },
+                            "tipo_dado": "textivis"
+                        }
+                    },
+                    {
+                        "tipo_nodo": "condicional",
+                        "condicao": {
+                            "tipo_nodo": "binaria",
+                            "operador": "?=",
+                            "esquerda": {
+                                "tipo_nodo": "binaria",
+                                "operador": "%",
+                                "esquerda": {
+                                    "tipo_nodo": "variavel",
+                                    "nome": "i",
+                                    "tipo_dado": "inteirivis"
+                                },
+                                "direita": {
+                                    "tipo_nodo": "numero",
+                                    "valor": 2,
+                                    "tipo_dado": "inteirivis"
+                                },
+                                "tipo_dado": "inteirivis"
+                            },
+                            "direita": {
+                                "tipo_nodo": "numero",
+                                "valor": 0,
+                                "tipo_dado": "inteirivis"
+                            },
+                            "tipo_dado": "inteirivis"
+                        },
+                        "bloco_verdadeiro": {
+                            "tipo_nodo": "bloco",
+                            "comandos": [
+                                {
+                                    "tipo_nodo": "chamada_procedimento",
+                                    "nome": "atualiza_globais",
+                                    "argumentos": [
+                                        {
+                                            "tipo_nodo": "variavel",
+                                            "nome": "i",
+                                            "tipo_dado": "inteirivis"
+                                        },
+                                        {
+                                            "tipo_nodo": "texto",
+                                            "valor": "Iteração par",
+                                            "tipo_dado": "textivis"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "tipo_nodo": "atribuicao",
+                        "id": "i",
+                        "expressao": {
+                            "tipo_nodo": "binaria",
+                            "operador": "+",
+                            "esquerda": {
+                                "tipo_nodo": "variavel",
+                                "nome": "i",
+                                "tipo_dado": "inteirivis"
+                            },
+                            "direita": {
+                                "tipo_nodo": "numero",
+                                "valor": 1,
+                                "tipo_dado": "inteirivis"
+                            },
+                            "tipo_dado": "inteirivis"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "tipo_nodo": "atribuicao",
+            "id": "mensagem_global",
+            "expressao": {
+                "tipo_nodo": "binaria",
+                "operador": "+",
+                "esquerda": {
+                    "tipo_nodo": "binaria",
+                    "operador": "+",
+                    "esquerda": {
+                        "tipo_nodo": "binaria",
+                        "operador": "+",
+                        "esquerda": {
+                            "tipo_nodo": "variavel",
+                            "nome": "mensagem_global",
+                            "tipo_dado": "textivis"
+                        },
+                        "direita": {
+                            "tipo_nodo": "texto",
+                            "valor": " | Loop Status: ",
+                            "tipo_dado": "textivis"
+                        },
+                        "tipo_dado": "textivis"
+                    },
+                    "direita": {
+                        "tipo_nodo": "variavel",
+                        "nome": "status_loop",
+                        "tipo_dado": "textivis"
+                    },
+                    "tipo_dado": "textivis"
+                },
+                "direita": {
+                    "tipo_nodo": "texto",
+                    "valor": " | Finalizado.",
+                    "tipo_dado": "textivis"
+                },
+                "tipo_dado": "textivis"
+            }
+        },
+        {
+            "tipo_nodo": "atribuicao",
+            "id": "contador_global",
+            "expressao": {
+                "tipo_nodo": "binaria",
+                "operador": "+",
+                "esquerda": {
+                    "tipo_nodo": "variavel",
+                    "nome": "contador_global",
+                    "tipo_dado": "inteirivis"
+                },
+                "direita": {
+                    "tipo_nodo": "numero",
+                    "valor": 100,
+                    "tipo_dado": "inteirivis"
+                },
+                "tipo_dado": "inteirivis"
+            }
+        }
+    ]
+}

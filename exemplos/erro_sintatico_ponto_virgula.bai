@@ -1,0 +1,5 @@
+// Erro Sintático: Falta ponto e vírgula
+inteirivis contador;
+contador = 5
+finivis
+

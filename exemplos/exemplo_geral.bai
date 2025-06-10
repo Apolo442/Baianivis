@@ -1,0 +1,78 @@
+// Exemplo Geral Correto - Baianivis (v4 - Corrigido Concatenação)
+
+// --- Declarações Globais (Variáveis, Funções, Procedimentos) ---
+
+// Variáveis Globais
+inteirivis contador_global;
+realzivis taxa_global;
+textivis mensagem_global;
+inteirivis i;
+inteirivis limite;
+realzivis valor_calculado; 
+textivis status_loop;
+
+// Procedimento para atualizar globais
+
+procedimentivis atualiza_globais(inteirivis incremento, textivis nova_msg) {
+    contador_global = contador_global + incremento;
+    taxa_global = taxa_global + 0.1;
+    mensagem_global = mensagem_global + " -> " + nova_msg;
+    retornivis; // Retorno vazio obrigatório
+}
+
+// Função para calcular algo com tipos mistos
+
+funcaozivis calcula_valor(inteirivis base, realzivis fator) retornivis realzivis {
+    realzivis resultado_local; // Variável local da função
+
+    resultado_local = (base * fator) + taxa_global; // Usa global taxa_global
+
+    sevis (resultado_local > 10.0) {
+        resultado_local = resultado_local / 2.0;
+    } senivis {
+        resultado_local = resultado_local + 1.0;
+    }
+    retornivis resultado_local; // Retorna valor real
+}
+
+// --- Comandos Globais (Código Principal) ---
+
+// Inicialização de globais (agora são comandos)
+
+contador_global = 0;
+taxa_global = 0.5;
+mensagem_global = "Início";
+limite = 5;
+i = 1;
+status_loop = "";
+
+// valor_calculado não precisa ser inicializado aqui, será atribuído no loop
+
+// Chamada de procedimento
+atualiza_globais(1, "Procedimento chamado");
+
+// Laço de repetição
+
+enquantivis (i <= limite) {
+    // Chamada de função
+    valor_calculado = calcula_valor(i, 1.5);
+
+    // Atualiza status (CORRIGIDO: removida concatenação de int com texto)
+    // A linguagem atual não suporta conversão implícita int->texto para o operador +
+    status_loop = status_loop + "Iteração; "; // Apenas texto com texto
+
+    // Condicional dentro do loop
+    sevis ( (i % 2) ?= 0 ) { // Verifica se i é par
+        atualiza_globais(i, "Iteração par");
+    }
+
+    i = i + 1;
+}
+
+// Comandos finais no escopo global
+
+mensagem_global = mensagem_global + " | Loop Status: " + status_loop + " | Finalizado.";
+contador_global = contador_global + 100;
+
+finivis // Fim do programa
+

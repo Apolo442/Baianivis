@@ -1,0 +1,5 @@
+// Erro Léxico: Caractere inválido
+inteirivis valor;
+valor = 10 $ 5; // '$' é inválido
+finivis
+

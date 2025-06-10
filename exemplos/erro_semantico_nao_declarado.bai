@@ -1,0 +1,5 @@
+// Erro Semântico: Variável não declarada
+inteirivis x;
+x = y + 5; // Erro: 'y' não foi declarada
+finivis
+
